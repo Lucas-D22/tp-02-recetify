@@ -6,3 +6,28 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+<h2>Recetify - Generador de recetas </h2>
+
+<form action='@Url.Action("respuesta")' method="post">
+    <div>
+        <label> Nombre: <input type="text" name="Nombre" /></label>
+    </div>
+    <div>
+        <label> Fecha de Nacimiento: <input type="date" name="FechaNacimiento" /></label>
+    </div>
+    <div>
+        <label> Tipo de Comida: </label>
+        <input type="radio" name="TipoComida" value="true" /> Caliente
+        <input type="radio" name="TipoComida" value="false" /> Fría
+    </div>
+    <div>
+        <label> Presupuesto (en pesos): <input type="number" name="Presupuesto" min="1" /></label>
+    </div>
+     <div>
+        <label> Cantidad de Personas: </label>
+        <input type="number" name="CantidadPersonas" min="1" max="20" />
+    </div>
+
+    <button type="submit">Generar Receta</button>
+</form>
