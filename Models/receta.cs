@@ -46,10 +46,7 @@ public string DeterminarPlato()
     return null;
   }
 }
-/*
-CalcularTiempo(): retorna los minutos estimados. El tiempo se calcula en base a CantidadPersonas usando una fórmula numérica: a más personas, 
-más tiempo. Los platos fríos deben tardar menos que los calientes.
-*/
+
 public int calcularTiempo(){
 
 if (cocinaPara == 1 && TipoComida){
@@ -81,18 +78,41 @@ else{
 
 
 public string determinarDificultad(){
-    if(presupuestoPesos < 3000 && cocinaPara <= 1 && cocinaPara >= 3){
-        return "principiante";
+    string dificultad = "indefinida";
+   if(presupuestoPesos < 3000)
+   {
+    if(cocinaPara >= 1 && cocinaPara <= 3)
+    {
+        dificultad = "Principiante";
     }
-    else if(presupuestoPesos > 3000 && cocinaPara <= 1 && cocinaPara >= 7){
-        return "intermedio";
+    else if(cocinaPara >=4 && cocinaPara <= 7)
+    {
+        dificultad = "intermedio";
     }
-    else if(presupuestoPesos > 7000 && cocinaPara >= 8){
-        return "avanzado";
+   }
+   else if (presupuestoPesos >= 3000 && presupuestoPesos<= 7000)
+   {
+     if(cocinaPara >= 1 && cocinaPara <= 3)
+    {
+        dificultad = "intermedio";
     }
-    else{
-        return null;
+    else if (cocinaPara > 4)
+    {
+        dificultad = "intermedio";
     }
+   }
+   else if (presupuestoPesos > 7000)
+   {
+    if(cocinaPara >= 1 && cocinaPara <= 7)
+    {
+        dificultad = "intermedio";
+    }
+    else if (cocinaPara >= 8)
+    {
+        dificultad = "avanzado";
+    }
+   }
+   return dificultad;
 }
 
 

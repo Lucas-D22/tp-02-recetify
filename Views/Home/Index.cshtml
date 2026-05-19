@@ -11,10 +11,10 @@
 
 <form action='@Url.Action("respuesta")' method="post">
     <div>
-        <label> Nombre: <input type="text" name="Nombre" /></label>
+        <label> Nombre: <input type="text" name="name" /></label>
     </div>
     <div>
-        <label> Fecha de Nacimiento: <input type="date" name="FechaNacimiento" /></label>
+        <label> Fecha de Nacimiento: <input type="date" name="fechaDeNacimiento" /></label>
     </div>
     <div>
         <label> Tipo de Comida: </label>
@@ -22,11 +22,11 @@
         <input type="radio" name="TipoComida" value="false" /> Fría
     </div>
     <div>
-        <label> Presupuesto (en pesos): <input type="number" name="Presupuesto" min="1" /></label>
+        <label> Presupuesto (en pesos): <input type="number" name="presupuestoPesos" min="1" /></label>
     </div>
      <div>
         <label> Cantidad de Personas: </label>
-        <input type="number" name="CantidadPersonas" min="1" max="20" />
+        <input type="number" name="cocinaPara" min="1" max="20" />
     </div>
 
     <button type="submit">Generar Receta</button>
