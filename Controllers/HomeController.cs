@@ -37,6 +37,7 @@ public class HomeController : Controller
         ViewBag.Edad = Receta.calcularEdad();
         ViewBag.Persona = Receta.cocinaPara;
         ViewBag.fechaDeNacimiento = Receta.fechaDeNacimiento.ToShortDateString();
+        ViewBag.nombre = Receta.name;
         return View();
         
     }

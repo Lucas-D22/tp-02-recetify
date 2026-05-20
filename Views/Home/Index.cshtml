@@ -1,32 +1,32 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Bienvenido a Recetify";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
-
+<div>
 <h2>Recetify - Generador de recetas </h2>
-
+<div>
 <form action='@Url.Action("respuesta")' method="post">
     <div>
-        <label> Nombre: <input type="text" name="name" /></label>
+        <label> Nombre: <input type="text" name="name" required/></label>
     </div>
     <div>
-        <label> Fecha de Nacimiento: <input type="date" name="fechaDeNacimiento" /></label>
+        <label> Fecha de Nacimiento: <input type="date" name="fechaDeNacimiento" required max="@DateTime.Now.ToString("yyyy-MM-dd")"/></label>
+    </div>
+    @if(ViewBag.DateError != null)
+    {
+        <div class="text-danger">@ViewBag.DateError</div>
+    }
+    <div>
+        <label> Tipo de Comida: 
+            <input type="radio" name="TipoComida" value="true" required/> Caliente
+            <input type="radio" name="TipoComida" value="false" required/> Fría
+        </label>
     </div>
     <div>
-        <label> Tipo de Comida: </label>
-        <input type="radio" name="TipoComida" value="true" /> Caliente
-        <input type="radio" name="TipoComida" value="false" /> Fría
-    </div>
-    <div>
-        <label> Presupuesto (en pesos): <input type="number" name="presupuestoPesos" min="1" /></label>
+        <label> Presupuesto (en pesos): <input type="number" name="presupuestoPesos" min="1" required/></label>
     </div>
      <div>
         <label> Cantidad de Personas: </label>
-        <input type="number" name="cocinaPara" min="1" max="20" />
+        <input type="number" name="cocinaPara" min="1" max="20" required/>
     </div>
 
     <button type="submit">Generar Receta</button>

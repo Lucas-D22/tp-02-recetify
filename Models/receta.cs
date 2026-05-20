@@ -58,7 +58,7 @@ else if(cocinaPara == 2 || cocinaPara == 3 && TipoComida){
 else if(cocinaPara >= 4 && cocinaPara <=7 && TipoComida){
     return 40;
 }
-else if (cocinaPara < 8 && TipoComida){
+else if (cocinaPara >= 8 && TipoComida){
     return 80;
 }
 else if(cocinaPara >= 1 && cocinaPara <=3 && !TipoComida){
@@ -67,7 +67,7 @@ else if(cocinaPara >= 1 && cocinaPara <=3 && !TipoComida){
 else if(cocinaPara >= 4 && cocinaPara <=7 && !TipoComida){
     return 20;
 }
-else if(cocinaPara < 8 && !TipoComida){
+else if(cocinaPara >= 8 && !TipoComida){
     return 40;
 }
 else{
